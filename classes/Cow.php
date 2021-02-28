@@ -19,7 +19,7 @@ class Cow
 	public function product()
 	{
 		$litersCount = rand(8, 12);
-		echo "Cow ID={$this->id} gave {$litersCount} liters of milk<br>";
+		echo "Cow ID={$this->id} gave {$litersCount} liters of milk" . PHP_EOL;
 		return ['milk', $litersCount];
 	}
 }

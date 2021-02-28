@@ -1,15 +1,25 @@
 <?php
 
-// Индексный файл для тестирования и разработки
+// Индексный файл для тестирования и разработки на локальном хосте
 
-require ($_SERVER['DOCUMENT_ROOT'] . '/classes/Cow.php');
-require ($_SERVER['DOCUMENT_ROOT'] . '/classes/Hen.php');
-require ($_SERVER['DOCUMENT_ROOT'] . '/classes/Barn.php');
+// Подключаю классы животных и хлева
+$serverRoot = $_SERVER['DOCUMENT_ROOT'];
+require ($serverRoot . '/classes/Cow.php');
+require ($serverRoot . '/classes/Hen.php');
+require ($serverRoot . '/classes/Barn.php');
 
-$bariga = new Barn;
+// Создаю новый хлев
+$bobsBarn = new Barn;
 
-$bariga->addAnimals('Cow', 7) . '<br>';
-$bariga->addAnimals('Hen', 10) . '<br>';
+echo '<pre>';
 
-$bariga->getProducts();
-$bariga->report();
+// Добавляю животных
+$bobsBarn->addAnimals('Cow', 7);
+$bobsBarn->addAnimals('Hen', 10);
+
+// Собираю продукцию
+$bobsBarn->getProducts();
+
+// Общий отчёт по добыче
+$bobsBarn->report();
+echo '</pre>';
