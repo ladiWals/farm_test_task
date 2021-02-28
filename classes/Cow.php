@@ -6,13 +6,20 @@ class Cow
 {
 	private $id;
 
+	function __construct($newId)
+	{
+		$this->id = $newId;
+	}
+
 	public function getId()
 	{
 		return $this->id;
 	}
 
-	public function milk()
+	public function product()
 	{
-		return rand(8, 12);
+		$litersCount = rand(8, 12);
+		echo "Cow ID={$this->id} gave {$litersCount} liters of milk<br>";
+		return ['milk', $litersCount];
 	}
 }

@@ -6,13 +6,20 @@ class Hen
 {
 	private $id;
 
+	function __construct($newId)
+	{
+		$this->id = $newId;
+	}
+
 	public function getId()
 	{
 		return $this->id;
 	}
 
-	public function egg()
+	public function product()
 	{
-		return rand(0, 1);
+		$eggCount = rand(0, 1);
+		echo "Hen ID={$this->id} laid {$eggCount} egg<br>";
+		return ['eggs', $eggCount];
 	}
 }
