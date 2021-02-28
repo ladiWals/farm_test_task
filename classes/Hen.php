@@ -1,8 +1,8 @@
 <?php
 
-// Класс коровы
+// Класс курицы
 
-class Cow
+class Hen
 {
 	private $id;
 
@@ -11,8 +11,8 @@ class Cow
 		return $this->id;
 	}
 
-	public function milk()
+	public function egg()
 	{
-		return rand(8, 12);
+		return rand(0, 1);
 	}
 }
