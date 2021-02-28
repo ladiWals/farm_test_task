@@ -14,8 +14,8 @@ $bobsBarn = new Barn;
 echo '<pre>';
 
 // Добавляю животных
-$bobsBarn->addAnimals('Cow', 7);
-$bobsBarn->addAnimals('Hen', 10);
+$bobsBarn->addAnimals('Cow', 10);
+$bobsBarn->addAnimals('Hen', 20);
 
 // Собираю продукцию
 $bobsBarn->getProducts();

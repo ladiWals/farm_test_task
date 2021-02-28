@@ -11,11 +11,6 @@ class Hen
 		$this->id = $newId;
 	}
 
-	public function getId()
-	{
-		return $this->id;
-	}
-
 	public function product()
 	{
 		$eggCount = rand(0, 1);
