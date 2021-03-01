@@ -22,4 +22,5 @@ $bobsBarn->getProducts();
 
 // Общий отчёт по добыче
 $bobsBarn->report();
+
 echo '</pre>';

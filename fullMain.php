@@ -1,6 +1,40 @@
 <?php
 
-// Класс хлева
+// Всё-в-одном файл
+
+class Cow
+{
+	private $id;
+
+	function __construct($newId)
+	{
+		$this->id = $newId;
+	}
+
+	public function product()
+	{
+		$litersCount = rand(8, 12);
+		echo "Cow ID={$this->id} gave {$litersCount} liters of milk" . 	PHP_EOL;
+		return ['milk', $litersCount];
+	}
+}
+
+class Hen
+{
+	private $id;
+
+	function __construct($newId)
+	{
+		$this->id = $newId;
+	}
+
+	public function product()
+	{
+		$eggCount = rand(0, 1);
+		echo "Hen ID={$this->id} laid {$eggCount} egg" . PHP_EOL;
+		return ['eggs', $eggCount];
+	}
+}
 
 class Barn
 {
@@ -41,3 +75,16 @@ class Barn
 		}
 	}
 }
+
+// Создаю новый хлев
+$bobsBarn = new Barn;
+
+// Добавляю животных
+$bobsBarn->addAnimals('Cow', 10);
+$bobsBarn->addAnimals('Hen', 20);
+
+// Собираю продукцию
+$bobsBarn->getProducts();
+
+// Общий отчёт по добыче
+$bobsBarn->report();
