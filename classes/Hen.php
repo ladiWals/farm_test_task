@@ -2,14 +2,10 @@
 
 // Класс курицы
 
-class Hen
-{
-	private $id;
+require_once(__DIR__ . '/Animal.php');
 
-	function __construct($newId)
-	{
-		$this->id = $newId;
-	}
+class Hen extends Animal
+{
 
 	public function product()
 	{
@@ -17,4 +13,5 @@ class Hen
 		echo "Hen ID={$this->id} laid {$eggCount} egg" . PHP_EOL;
 		return ['eggs', $eggCount];
 	}
+	
 }

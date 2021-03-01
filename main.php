@@ -3,10 +3,9 @@
 // Файл для запуска работы системы из консоли
 
 // Подключаю классы животных и хлева
-$serverRoot = __DIR__;
-require ($serverRoot . '/classes/Cow.php');
-require ($serverRoot . '/classes/Hen.php');
-require ($serverRoot . '/classes/Barn.php');
+require (__DIR__ . '/classes/Cow.php');
+require (__DIR__ . '/classes/Hen.php');
+require (__DIR__ . '/classes/Barn.php');
 
 // Создаю новый хлев
 $bobsBarn = new Barn;

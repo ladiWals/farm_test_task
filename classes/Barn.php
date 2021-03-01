@@ -5,10 +5,7 @@
 class Barn
 {
 	private $animals = [];
-	private $products = [
-		'milk' => 0,
-		'eggs' => 0,
-	];
+	private $products = [];
 
 	// Добавляет животных в хлев
 	public function addAnimals($kind, $quantity) 
