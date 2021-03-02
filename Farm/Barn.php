@@ -2,7 +2,7 @@
 
 // Класс хлева
 
-namespace Farm;echo __DIR__;
+namespace Farm;
 
 class Barn
 {
@@ -12,10 +12,16 @@ class Barn
 	// Добавляет животных в хлев
 	public function addAnimals($kind, $quantity) 
 	{
-		for($i = 0; $i < $quantity; $i++) {
-			$this->animals[] = new $kind(count($this->animals) + 1);
+		if (class_exists($kind) && gettype($quantity) == 'integer') {
+			for($i = 0; $i < $quantity; $i++) {
+				$this->animals[] = new $kind(count($this->animals) + 1);
+			}
+			echo "{$quantity} {$kind}s were added to the Barn!" . PHP_EOL . PHP_EOL;
+		} elseif ( !class_exists($kind) ) {
+			throw new \Exception("class {$kind} do not exist!");
+		} elseif (gettype($quantity) != 'integer') {
+			throw new \InvalidArgumentException('Second argument must be a number!');
 		}
-		echo "{$quantity} {$kind}s were added to the Barn!" . PHP_EOL . PHP_EOL;
 	}
 
 	// Проходит по всем животным в хлеву и собирает продукцию

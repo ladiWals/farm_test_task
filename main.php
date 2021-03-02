@@ -20,7 +20,7 @@ $bobsBarn = new Farm\Barn;
 
 // Добавляю животных
 $bobsBarn->addAnimals('Farm\\Cow', 10);
-$bobsBarn->addAnimals('Farm\\Hen', 20);
+$bobsBarn->addAnimals('Farm\\Hen', 20);$bobsBarn->addAnimals('Farm\\Hen', "adc");
 
 // Собираю продукцию
 $bobsBarn->getProducts();
