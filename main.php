@@ -2,17 +2,25 @@
 
 // Файл для запуска работы системы из консоли
 
-// Подключаю классы животных и хлева
-require (__DIR__ . '/classes/Cow.php');
-require (__DIR__ . '/classes/Hen.php');
-require (__DIR__ . '/classes/Barn.php');
+// Автоподгрузка классов
+spl_autoload_register(function($class)
+{
+
+	// Получаю полное имя файла
+	$file = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
+
+	// Если такой файл существует, то подключаю его
+	if(file_exists($file)) {
+		require_once($file);
+	}
+});
 
 // Создаю новый хлев
-$bobsBarn = new Barn;
+$bobsBarn = new Farm\Barn;
 
 // Добавляю животных
-$bobsBarn->addAnimals('Cow', 10);
-$bobsBarn->addAnimals('Hen', 20);
+$bobsBarn->addAnimals('Farm\\Cow', 10);
+$bobsBarn->addAnimals('Farm\\Hen', 20);
 
 // Собираю продукцию
 $bobsBarn->getProducts();

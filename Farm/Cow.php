@@ -2,7 +2,7 @@
 
 // Класс коровы
 
-require_once(__DIR__ . '/Animal.php');
+namespace Farm;
 
 class Cow extends Animal
 {
@@ -13,5 +13,5 @@ class Cow extends Animal
 		echo "Cow ID={$this->id} gave {$litersCount} liters of milk" . 	PHP_EOL;
 		return ['milk', $litersCount];
 	}
-	
+
 }

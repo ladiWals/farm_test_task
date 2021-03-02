@@ -2,7 +2,7 @@
 
 // Класс курицы
 
-require_once(__DIR__ . '/Animal.php');
+namespace Farm;
 
 class Hen extends Animal
 {

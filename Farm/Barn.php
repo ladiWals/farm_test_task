@@ -2,6 +2,8 @@
 
 // Класс хлева
 
+namespace Farm;echo __DIR__;
+
 class Barn
 {
 	private $animals = [];
@@ -23,6 +25,11 @@ class Barn
 
 			// Получаю продукцию с животного
 			$get = $animal->product();
+
+			// Добавляю новый вид продукции в массив (если ещё не добавлен)
+			if (empty($this->products[$get[0]])) {
+				$this->products[$get[0]] = 0;
+			}
 
 			// Добавляю число в массив продукции
 			$this->products[$get[0]] += $get[1];

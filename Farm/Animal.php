@@ -1,5 +1,7 @@
 <?php
 
+namespace Farm;
+
 class Animal
 {
 	protected $id;
