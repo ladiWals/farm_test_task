@@ -14,14 +14,14 @@ class Barn
 	{
 		// Проверю сущестоввание класса и является ли $quantity числом, если нет - кидаю исключения
 		try {
-			if (class_exists($kind) && gettype($quantity) == 'integer' && $quantity >= 0 && get_parent_class($kind) == 'Farm\\Animal') {
+			if (class_exists($kind) && gettype($quantity) == 'integer' && $quantity >= 0 && is_subclass_of($kind, 'Farm\\Animal')) {
 				for($i = 0; $i < $quantity; $i++) {
 					$this->animals[] = new $kind(count($this->animals) + 1);
 				}
 				echo "{$quantity} {$kind}s were added to the Barn!" . PHP_EOL . PHP_EOL;
 			} elseif ( !class_exists($kind) ) {
 				throw new \InvalidArgumentException("class {$kind} do not exist!");
-			} elseif (get_parent_class($kind) != 'Farm\\Animal') {
+			} elseif ( !is_subclass_of($kind, 'Farm\\Animal') ) {
 				throw new \InvalidArgumentException("class {$kind} not an Animal!");
 			} elseif (gettype($quantity) != 'integer' || $quantity < 0) {
 				throw new \InvalidArgumentException('Second argument to "addAnimals" must be a positive number!');
